@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setRoot() {
         window = UIWindow()
-        let initialView = ViewController()
-        let navigationController = UINavigationController(rootViewController: initialView)
+        let trendingView = TrendingMoviesModuleBuilder().buildModule()
+        let navigationController = UINavigationController(rootViewController: trendingView)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
