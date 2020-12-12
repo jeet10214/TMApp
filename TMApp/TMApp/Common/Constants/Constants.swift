@@ -13,3 +13,9 @@ public enum ViewState: Equatable {
     case errorWith(String)
     case content
 }
+
+enum Constants {
+    static let defaultPageNum: Int = 0
+    static let defaultTotalCount: Int = 0
+    static let defaultPageSize: Int = 20
+}

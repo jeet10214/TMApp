@@ -6,12 +6,18 @@ class TrendingMoviesVC: UIViewController {
     var viewState: ViewState = .none
     var moviesViewModel: TrendingMoviesViewModel?
     
+    //MARK: VC LifeCycle
+    override func loadView() {
+        view = UIView()
+        navigationItem.title = "Trending Movies"
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        presenter.getMovies()
     }
-
-
 }
 
 

@@ -16,11 +16,13 @@ protocol BaseViewInput : AnyObject{
 
 extension BaseViewInput where Self: UIViewController {
     func displaySpinner(){
-        //TODO : Add code here for spinner
+        
+        view.displaySpinner()
     }
     
     func hideSpinner(){
-        //TODO : Add code here to hide spinner
+        
+        view.hideSpinner()
     }
 }
 
