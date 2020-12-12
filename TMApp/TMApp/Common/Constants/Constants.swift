@@ -19,3 +19,7 @@ enum Constants {
     static let defaultTotalCount: Int = 0
     static let defaultPageSize: Int = 20
 }
+
+enum Strings {
+    static let trendingMoviesTitle = "Trending Movies"
+}

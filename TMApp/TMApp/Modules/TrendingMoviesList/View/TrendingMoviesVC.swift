@@ -9,7 +9,8 @@ class TrendingMoviesVC: UIViewController {
     //MARK: VC LifeCycle
     override func loadView() {
         view = UIView()
-        navigationItem.title = "Trending Movies"
+        view.backgroundColor = .appBackground()
+        navigationItem.title = Strings.trendingMoviesTitle
     }
     
     
@@ -27,7 +28,7 @@ extension TrendingMoviesVC: TrendingMoviesViewInput {
     }
     
     func displayMovies(with viewModel: TrendingMoviesViewModel) {
-        
+        moviesViewModel = viewModel
     }
     
     func insertMovies(with viewModel: TrendingMoviesViewModel, at indexPaths: [IndexPath]) {

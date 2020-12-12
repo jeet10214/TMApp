@@ -30,6 +30,7 @@
 		719FBCAB25855F6A009F45AE /* TrendingMoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBCAA25855F6A009F45AE /* TrendingMoviesRouter.swift */; };
 		719FBCBF25856632009F45AE /* MoviesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBCBE25856632009F45AE /* MoviesAPI.swift */; };
 		719FBCD02585741E009F45AE /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBCCF2585741E009F45AE /* ViewExtensions.swift */; };
+		719FBCE125857D8C009F45AE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBCE025857D8C009F45AE /* UIColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		719FBCAA25855F6A009F45AE /* TrendingMoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesRouter.swift; sourceTree = "<group>"; };
 		719FBCBE25856632009F45AE /* MoviesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAPI.swift; sourceTree = "<group>"; };
 		719FBCCF2585741E009F45AE /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		719FBCE025857D8C009F45AE /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				719FBCCF2585741E009F45AE /* ViewExtensions.swift */,
+				719FBCE025857D8C009F45AE /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				719FBC9425855705009F45AE /* TrendingMoviesViewModel.swift in Sources */,
 				719FBC8C258556F0009F45AE /* TrendingMoviesBuilder.swift in Sources */,
 				719FBCBF25856632009F45AE /* MoviesAPI.swift in Sources */,
+				719FBCE125857D8C009F45AE /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,10 @@ final class TrendingMoviesPresenter: TrendingMoviesModuleInput, TrendingMoviesVi
     var totalPages = Constants.defaultPageNum
     
     var isMoreDataAvailable: Bool{
-        return true
+        guard totalPages != 0 else {
+            return true
+        }
+        return pageNum < totalPages
     }
     
     //MARK: TrendingMoviesViewOutput
@@ -60,6 +63,19 @@ final class TrendingMoviesPresenter: TrendingMoviesModuleInput, TrendingMoviesVi
     func getMoviesError(_ error: NetworkError) {
         DispatchQueue.main.async {
             self.view?.changeViewState(.errorWith(error.description))
+        }
+    }
+    
+    fileprivate func insertMoreMovies(with movies: [TrendingMovie]) {
+        let previousCount = totalCount
+        totalCount += movies.count
+        trendingMoviesViewModel.addMoreTrendingMovies(movies)
+        let indexPaths: [IndexPath] = (previousCount..<totalCount).map {
+            return IndexPath(item: $0, section: 0)
+        }
+        DispatchQueue.main.async { [unowned self] in
+            self.view?.insertMovies(with: self.trendingMoviesViewModel, at: indexPaths)
+            self.view?.changeViewState(.content)
         }
     }
 }
