@@ -13,6 +13,12 @@
 		719FBC1F258521B9009F45AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719FBC1D258521B9009F45AE /* LaunchScreen.storyboard */; };
 		719FBC2A258521BA009F45AE /* TMAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBC29258521BA009F45AE /* TMAppTests.swift */; };
 		719FBC35258521BA009F45AE /* TMAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBC34258521BA009F45AE /* TMAppUITests.swift */; };
+		719FBC532585254D009F45AE /* NetworkAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBC4F2585254D009F45AE /* NetworkAPIClient.swift */; };
+		719FBC542585254D009F45AE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBC502585254D009F45AE /* NetworkError.swift */; };
+		719FBC552585254D009F45AE /* URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBC512585254D009F45AE /* URLRequestConvertible.swift */; };
+		719FBC562585254D009F45AE /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBC522585254D009F45AE /* APIEndPoint.swift */; };
+		719FBC6325852BD7009F45AE /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBC6125852BD7009F45AE /* ImageDownloader.swift */; };
+		719FBC6425852BD7009F45AE /* ImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBC6225852BD7009F45AE /* ImageOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		719FBC30258521BA009F45AE /* TMAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		719FBC34258521BA009F45AE /* TMAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAppUITests.swift; sourceTree = "<group>"; };
 		719FBC36258521BA009F45AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		719FBC4F2585254D009F45AE /* NetworkAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAPIClient.swift; sourceTree = "<group>"; };
+		719FBC502585254D009F45AE /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		719FBC512585254D009F45AE /* URLRequestConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestConvertible.swift; sourceTree = "<group>"; };
+		719FBC522585254D009F45AE /* APIEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
+		719FBC6125852BD7009F45AE /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		719FBC6225852BD7009F45AE /* ImageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +107,7 @@
 		719FBC11258521B1009F45AE /* TMApp */ = {
 			isa = PBXGroup;
 			children = (
+				719FBC4E25852433009F45AE /* NetworkLayer */,
 				719FBC12258521B1009F45AE /* AppDelegate.swift */,
 				719FBC16258521B1009F45AE /* ViewController.swift */,
 				719FBC1B258521B9009F45AE /* Assets.xcassets */,
@@ -120,6 +133,27 @@
 				719FBC36258521BA009F45AE /* Info.plist */,
 			);
 			path = TMAppUITests;
+			sourceTree = "<group>";
+		};
+		719FBC4E25852433009F45AE /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				719FBC6025852BA1009F45AE /* ImageDownloader */,
+				719FBC522585254D009F45AE /* APIEndPoint.swift */,
+				719FBC4F2585254D009F45AE /* NetworkAPIClient.swift */,
+				719FBC502585254D009F45AE /* NetworkError.swift */,
+				719FBC512585254D009F45AE /* URLRequestConvertible.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		719FBC6025852BA1009F45AE /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				719FBC6125852BD7009F45AE /* ImageDownloader.swift */,
+				719FBC6225852BD7009F45AE /* ImageOperation.swift */,
+			);
+			path = ImageDownloader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				719FBC532585254D009F45AE /* NetworkAPIClient.swift in Sources */,
+				719FBC542585254D009F45AE /* NetworkError.swift in Sources */,
+				719FBC6325852BD7009F45AE /* ImageDownloader.swift in Sources */,
+				719FBC6425852BD7009F45AE /* ImageOperation.swift in Sources */,
+				719FBC552585254D009F45AE /* URLRequestConvertible.swift in Sources */,
 				719FBC17258521B1009F45AE /* ViewController.swift in Sources */,
 				719FBC13258521B1009F45AE /* AppDelegate.swift in Sources */,
+				719FBC562585254D009F45AE /* APIEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TMApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,7 +470,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.user.jeetkapadia.TMApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -440,6 +481,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TMApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -447,7 +489,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.user.jeetkapadia.TMApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
