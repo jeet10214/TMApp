@@ -30,8 +30,8 @@ extension BaseViewInput where Self: UIViewController {
 protocol TrendingMoviesViewInput: BaseViewInput {
     var presenter: TrendingMoviesViewOutput! { get set }
     func changeViewState(_ state: ViewState)
-    func displayMovies(with viewModel: TrendingMoviesViewModel)
-    func insertMovies(with viewModel: TrendingMoviesViewModel, at indexPaths: [IndexPath])
+    func displayTrendingMovies(with viewModel: TrendingMoviesViewModel)
+    func insertTrendingMovies(with viewModel: TrendingMoviesViewModel, at indexPaths: [IndexPath])
 }
 
 //MARK: Presenter
