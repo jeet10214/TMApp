@@ -8,26 +8,25 @@
 import XCTest
 @testable import TMApp
 
-class TMAppTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+class TrendingMoviesPresenterTests: XCTestCase {
+    
+    func testCaseOne(){
+        let network: NetworkAPIClient = NetworkAPIClient()
+        let expectation = XCTestExpectation.init(description: "Your expectation")
+        
+        // We ask the unit test to wait our expectation to finish.
+        let endPoint = MoviesAPI.getMoviesFor(page: 1)
+        network.dataRequest(endPoint, objectType: TrendingMoviesBase.self) { [weak self] (result: Result<TrendingMoviesBase, NetworkError>) in
+            guard let self = self else { return }
+            switch result {
+            case let .success(response):
+                
+                XCTAssertTrue(response.results?.count ?? 0 > 0)
+                expectation.fulfill()
+            case let .failure(error):
+                XCTFail("Fail with error \(error)")
+            }
+            self.waitForExpectations(timeout: 20)
         }
     }
-
 }
