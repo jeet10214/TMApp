@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		718BD7E7258639B600B342DE /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718BD7E6258639B600B342DE /* StringExtensions.swift */; };
 		719FBC13258521B1009F45AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBC12258521B1009F45AE /* AppDelegate.swift */; };
 		719FBC17258521B1009F45AE /* TrendingMoviesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719FBC16258521B1009F45AE /* TrendingMoviesVC.swift */; };
 		719FBC1C258521B9009F45AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 719FBC1B258521B9009F45AE /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		718BD7E6258639B600B342DE /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		719FBC0F258521B1009F45AE /* TMApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719FBC12258521B1009F45AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		719FBC16258521B1009F45AE /* TrendingMoviesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesVC.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				719FBD3E2585984C009F45AE /* ImageViewExtensions.swift */,
 				719FBD4F25859A84009F45AE /* FontExtensions.swift */,
 				719FBD5425859ACB009F45AE /* ImageExtension.swift */,
+				718BD7E6258639B600B342DE /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				719FBC13258521B1009F45AE /* AppDelegate.swift in Sources */,
 				719FBD5025859A84009F45AE /* FontExtensions.swift in Sources */,
 				719FBC562585254D009F45AE /* APIEndPoint.swift in Sources */,
+				718BD7E7258639B600B342DE /* StringExtensions.swift in Sources */,
 				719FBD1A258591DC009F45AE /* CollectionViewExtensions.swift in Sources */,
 				719FBCD02585741E009F45AE /* ViewExtensions.swift in Sources */,
 				719FBC9425855705009F45AE /* TrendingMoviesViewModel.swift in Sources */,

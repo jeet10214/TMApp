@@ -10,7 +10,7 @@ class TrendingMoviesVC: UIViewController {
         let trendingMovieslayout = UICollectionViewFlowLayout()
         let spacing = Constants.defaultSpacing
         let itemWidth: CGFloat = (UIScreen.main.bounds.width - (Constants.numberOfColumns - spacing) - 2) / Constants.numberOfColumns
-        let itemHeight: CGFloat = (itemWidth - Constants.defaultPadding*2) * 1.5 + 75
+        let itemHeight: CGFloat = (itemWidth - Constants.defaultPadding*2) * 1.5 + 63
         trendingMovieslayout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         trendingMovieslayout.minimumInteritemSpacing = spacing
         trendingMovieslayout.minimumLineSpacing = spacing
