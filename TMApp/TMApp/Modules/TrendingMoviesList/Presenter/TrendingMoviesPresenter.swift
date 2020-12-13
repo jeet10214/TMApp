@@ -57,7 +57,9 @@ final class TrendingMoviesPresenter: TrendingMoviesModuleInput, TrendingMoviesVi
                 self.view?.displayTrendingMovies(with: self.trendingMoviesViewModel)
                 self.view?.changeViewState(.content)
             }
-        } 
+        }else {
+            insertMoreMovies(with: movies)
+        }
     }
     
     func getMoviesError(_ error: NetworkError) {

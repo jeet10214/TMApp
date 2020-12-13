@@ -51,7 +51,8 @@ enum APP_FONT_SIZE: Float {
 
 enum APP_IMAGES: String {
     case SEARCH = "Search"
-    case DISCLOSURE = "Disclosure"
+    case STAR = "Star"
+    case REEL = "Reel"
 }
 
 enum APP_COLOR: String {
