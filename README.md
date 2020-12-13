@@ -7,7 +7,7 @@ vote count, percentage of people liked the movie and information related to movi
 
 - [x] VIPER
 - [x] Contains Dark Mode Support
-- [x] Code based UI development (No xib, no No storyoard)
+- [x] Code based UI development (No xib, No storyoard)
 - [x] Unit testing
 - [x] Useful Extensions
 - [x] Git braching module wise
