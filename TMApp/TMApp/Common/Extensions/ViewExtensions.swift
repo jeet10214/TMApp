@@ -23,4 +23,8 @@ extension UIView {
         spinner.stopAnimating()
         spinner.removeFromSuperview()
     }
+    
+    func giveCorner(radius: CGFloat) {
+        layer.cornerRadius = radius
+    }
 }

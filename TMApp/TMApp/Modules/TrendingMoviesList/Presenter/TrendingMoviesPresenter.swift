@@ -54,7 +54,7 @@ final class TrendingMoviesPresenter: TrendingMoviesModuleInput, TrendingMoviesVi
             }
 
             DispatchQueue.main.async { [unowned self] in
-                self.view?.displayMovies(with: self.trendingMoviesViewModel)
+                self.view?.displayTrendingMovies(with: self.trendingMoviesViewModel)
                 self.view?.changeViewState(.content)
             }
         } 
@@ -74,7 +74,7 @@ final class TrendingMoviesPresenter: TrendingMoviesModuleInput, TrendingMoviesVi
             return IndexPath(item: $0, section: 0)
         }
         DispatchQueue.main.async { [unowned self] in
-            self.view?.insertMovies(with: self.trendingMoviesViewModel, at: indexPaths)
+            self.view?.insertTrendingMovies(with: self.trendingMoviesViewModel, at: indexPaths)
             self.view?.changeViewState(.content)
         }
     }
