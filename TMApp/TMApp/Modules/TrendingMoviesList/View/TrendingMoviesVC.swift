@@ -42,7 +42,7 @@ class TrendingMoviesVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        scrollViewDidScroll(collectionView) // to set nav bar color
+        scrollViewDidScroll(collectionView) // for setting nav bar color
     }
     
     private func setupViews() {
@@ -53,7 +53,7 @@ class TrendingMoviesVC: UIViewController {
     private func configureCollectionView() {
         view.addSubview(collectionView)
         collectionView.pinEdgesToSuperview()
-        collectionView.registerCell(GenericCollectionViewCell<TrendingMovieCardView>.self)
+        collectionView.registerCell(GenericCollectionViewCell<MoviesBannerView>.self)
         collectionView.register(FooterView.self, ofKind: UICollectionView.elementKindSectionFooter)
     }
 }
@@ -103,7 +103,7 @@ extension TrendingMoviesVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as GenericCollectionViewCell<TrendingMovieCardView>
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as GenericCollectionViewCell<MoviesBannerView>
         
         guard let viewModel = moviesViewModel else {
             return cell
@@ -112,7 +112,7 @@ extension TrendingMoviesVC: UICollectionViewDataSource {
         let imageSize = CGSize(width: imageWidth, height: imageWidth*1.5)
         
         guard cell.cellView != nil else {
-            let cardView = TrendingMovieCardView(frame: .zero)
+            let cardView = MoviesBannerView(frame: .zero)
             cell.cellView = cardView
             cell.cellView?.movie = viewModel.trendingMovieAt(indexPath.item)
             if let imageURL = viewModel.posterURL(indexPath.item) {

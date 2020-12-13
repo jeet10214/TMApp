@@ -16,6 +16,12 @@ final class TrendingMoviesInterator : TrendingMoviesInteractorInput {
         self.network = network
     }
     
+    //MARK: Load Movies
+    /*!
+     * @description: Load movies for Page
+     * class
+     * @parameters: takes pageNumber, as param
+     */
     func loadMovies(for pageNum: Int) {
         
         let endPoint = MoviesAPI.getMoviesFor(page: pageNum)

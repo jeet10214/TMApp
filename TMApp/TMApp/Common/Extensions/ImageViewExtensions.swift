@@ -9,6 +9,11 @@ import UIKit
 
 extension UIImageView {
     
+    /*!
+     * @description: Load Image into imageView from the given imageUrl using ImageDownloader
+     * class
+     * @parameters: takes imageURL, placeholderImage and indexPath as params
+     */
     func loadImage(with imageURL: URL, placeholder: UIImage? = UIImage(color: .black), size: CGSize, indexPath: IndexPath?) {
         self.image = placeholder
         ImageDownloader.shared.downloadImage(

@@ -1,5 +1,5 @@
 //
-//  TrendingMovieCardView.swift
+//  MoviesBannerView.swift
 //  TMApp
 //
 //  Created by Jeet Kapadia on 13/12/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendingMovieCardView: UIView {
+class MoviesBannerView: UIView {
     
     // MARK: View Properties
     lazy var titleLabel: UILabel = {
@@ -18,7 +18,7 @@ class TrendingMovieCardView: UIView {
         return titleLabel
     }()
     
-    lazy var trendingMoviePhotoImageView: UIImageView = {
+    lazy var moviePhotoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(with: .SEARCH)
@@ -26,7 +26,7 @@ class TrendingMovieCardView: UIView {
         return imageView
     }()
     
-    lazy var movieReleaseImageView: UIImageView = {
+    lazy var movieReleaseIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(with: .REEL)
@@ -62,7 +62,7 @@ class TrendingMovieCardView: UIView {
         return likedPercentageLabel
     }()
     
-    lazy var voteCountImageView: UIImageView = {
+    lazy var voteCountIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(with: .STAR)
@@ -113,50 +113,63 @@ class TrendingMovieCardView: UIView {
     }
     
     // MARK: Private Custom Methods
+    ///PrepareView:
+    ///1:  moviePhotoImageView to view for displaying poster data
+    ///2:  Stackview to view which contains
+        ///-releaseDateIcon
+        ///-releaseDateLabel
+    ///3:  languageLabel to display the movie's avaialable language
+    ///4: StackView to view which contains
+        ///-voteCountIcon
+        ///-voteCountLabel
+    ///5: adultMovieLabel to display movie's content is suitable for children
+    ///6: likedPercentage view to display the average vote rating of users
     private func prepareView() {
         
         //1
-        addSubview(trendingMoviePhotoImageView)
-        trendingMoviePhotoImageView.pinEdgesEquallyToSuperview(atrributes: [.top, .leading, .trailing], constant: Constants.defaultPadding)
-        trendingMoviePhotoImageView.pin(attribute: .height, toView: trendingMoviePhotoImageView, toAttribute: .width, multiplier: 1.5, constant: 0)
-        trendingMoviePhotoImageView.giveCorner(radius: Constants.defaultRadius)
+        addSubview(moviePhotoImageView)
+        moviePhotoImageView.pinEdgesEquallyToSuperview(atrributes: [.top, .leading, .trailing], constant: Constants.defaultPadding)
+        moviePhotoImageView.pin(attribute: .height, toView: moviePhotoImageView, toAttribute: .width, multiplier: 1.5, constant: 0)
+        moviePhotoImageView.giveCorner(radius: Constants.defaultRadius)
 
+        //2
         let releaseDateStackView = UIStackView()
         addSubview(releaseDateStackView)
-        releaseDateStackView.addArrangedSubview(movieReleaseImageView)
+        releaseDateStackView.addArrangedSubview(movieReleaseIcon)
         releaseDateStackView.addArrangedSubview(movieReleaseDateLabel)
-        releaseDateStackView.axis = .horizontal
-        releaseDateStackView.spacing = 4
-        movieReleaseImageView.pinHeightWidth(constant: 14)
-        releaseDateStackView.pinTo(atrribute: .top, toView: trendingMoviePhotoImageView, toAttribute: .bottom, constant: Constants.defaultSpacing)
+        releaseDateStackView.setAxisAndSpacing()
+        movieReleaseIcon.pinHeightWidth(constant: 14)
+        releaseDateStackView.pinTo(atrribute: .top, toView: moviePhotoImageView, toAttribute: .bottom, constant: Constants.defaultSpacing)
         releaseDateStackView.pinEdgesEquallyToSuperview(atrributes: [.leading], constant: Constants.defaultPadding)
         releaseDateStackView.pinHeight(14)
         
+        //3
         addSubview(languageLabel)
-        languageLabel.pinTo(atrribute: .top, toView: trendingMoviePhotoImageView, toAttribute: .bottom, constant: Constants.defaultSpacing)
+        languageLabel.pinTo(atrribute: .top, toView: moviePhotoImageView, toAttribute: .bottom, constant: Constants.defaultSpacing)
         languageLabel.pinTo(atrribute: .leading, toView: releaseDateStackView, toAttribute: .trailing, constant: Constants.defaultPadding)
         languageLabel.pinEdgesEquallyToSuperview(atrributes: [.trailing], constant: Constants.defaultPadding)
         
+        //4
         let voteCountStackView = UIStackView()
         addSubview(voteCountStackView)
-        voteCountStackView.addArrangedSubview(voteCountImageView)
+        voteCountStackView.addArrangedSubview(voteCountIcon)
         voteCountStackView.addArrangedSubview(voteCountLabel)
-        voteCountStackView.axis = .horizontal
-        voteCountStackView.spacing = 4
-        movieReleaseImageView.pinHeightWidth(constant: 14)
+        voteCountStackView.setAxisAndSpacing()
+        movieReleaseIcon.pinHeightWidth(constant: 14)
         voteCountStackView.pinTo(atrribute: .top, toView: releaseDateStackView, toAttribute: .bottom, constant: Constants.defaultSpacing + 5)
         voteCountStackView.pinEdgesEquallyToSuperview(atrributes: [.leading], constant: Constants.defaultPadding)
         voteCountStackView.pinHeight(14)
         
+        //5
         addSubview(adultMovieLabel)
         adultMovieLabel.pinTo(atrribute: .top, toView: releaseDateStackView, toAttribute: .bottom, constant: Constants.defaultSpacing)
         adultMovieLabel.pinTo(atrribute: .leading, toView: voteCountStackView, toAttribute: .trailing, constant: Constants.defaultPadding)
         adultMovieLabel.pinEdgesEquallyToSuperview(atrributes: [.trailing], constant: Constants.defaultPadding)
         
-        
+        //6
         addSubview(likedPercentageView)
-        likedPercentageView.pinTo(atrribute: .top, toView: trendingMoviePhotoImageView, toAttribute: .top, constant: Constants.defaultPadding)
-        likedPercentageView.pinTo(atrribute: .trailing, toView: trendingMoviePhotoImageView, toAttribute: .trailing, constant: -Constants.defaultPadding)
+        likedPercentageView.pinTo(atrribute: .top, toView: moviePhotoImageView, toAttribute: .top, constant: Constants.defaultPadding)
+        likedPercentageView.pinTo(atrribute: .trailing, toView: moviePhotoImageView, toAttribute: .trailing, constant: -Constants.defaultPadding)
         likedPercentageView.pinHeightWidth(constant: 30)
         likedPercentageView.giveCorner(radius: 15)
         
@@ -171,6 +184,6 @@ class TrendingMovieCardView: UIView {
     ///   - size: size for the image
     ///   - indexPath: indexPath of list
     func configure(imageURL: URL, size: CGSize, indexPath: IndexPath) {
-        trendingMoviePhotoImageView.loadImage(with: imageURL, size: size, indexPath: indexPath)
+        moviePhotoImageView.loadImage(with: imageURL, size: size, indexPath: indexPath)
     }
 }
