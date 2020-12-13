@@ -3,6 +3,12 @@
 TMApp is a simple movie list view app that gives you the latest trending movies list along with other information of that movies such as its release date,
 vote count, percentage of people liked the movie and information related to movie certificate by sensor board i.e A -> Adult(18+) or U/A.  
 
+##Screenshots:
+
+![image](https://i.postimg.cc/xcbXX86H/Simulator-Screen-Shot-i-Phone-11-2020-12-13-at-23-48-57.png)
+
+![image](https://i.postimg.cc/mPYhSqfg/Simulator-Screen-Shot-i-Phone-11-2020-12-13-at-23-49-17.png)
+
 ## Features
 
 - [x] VIPER
